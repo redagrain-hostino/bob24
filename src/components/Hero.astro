@@ -63,19 +63,19 @@
 		<div class="hero__stats">
 			<div class="hero__stat">
 				<div class="hero__stat-number">
-					20<span class="hero__stat-suffix">+</span>
+					<span class="animated-counter" data-target="20">1</span><span class="hero__stat-suffix">+</span>
 				</div>
 				<div class="hero__stat-label">Plombiers dispo</div>
 			</div>
 			<div class="hero__stat">
 				<div class="hero__stat-number">
-					24<span class="hero__stat-suffix">H</span>
+					<span class="animated-counter" data-target="24">1</span><span class="hero__stat-suffix">H</span>
 				</div>
 				<div class="hero__stat-label">Jour et nuit</div>
 			</div>
 			<div class="hero__stat">
 				<div class="hero__stat-number">
-					<span class="hero__stat-prefix">+</span>15
+					<span class="hero__stat-prefix">+</span><span class="animated-counter" data-target="15">1</span>
 				</div>
 				<div class="hero__stat-label">ans d'expérience</div>
 			</div>
@@ -333,3 +333,39 @@
 		}
 	}
 </style>
+
+<script>
+	// Run animation on load
+	document.addEventListener('DOMContentLoaded', () => {
+		const counters = document.querySelectorAll('.animated-counter');
+		
+		counters.forEach((counter) => {
+			const el = counter as HTMLElement;
+			const target = parseInt(el.getAttribute('data-target') || '0', 10);
+			if (isNaN(target) || target === 0) return;
+			
+			const duration = 2500; // 2.5 seconds animation
+			const frameDuration = 1000 / 60; // 60 frames per second
+			const totalFrames = Math.round(duration / frameDuration);
+			let frame = 0;
+			
+			// Fluid easing out formula
+			const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+			
+			const countUp = setInterval(() => {
+				frame++;
+				const progress = easeOutQuart(frame / totalFrames);
+				// Start from 1, animate up to target
+				const currentCount = Math.round(1 + (target - 1) * progress);
+				
+				el.textContent = currentCount.toString();
+				
+				// Clear interval when done
+				if (frame >= totalFrames) {
+					clearInterval(countUp);
+					el.textContent = target.toString();
+				}
+			}, frameDuration);
+		});
+	});
+</script>
