@@ -1,36 +1,51 @@
 ---
+export interface Props {
+	title?: string;
+	subtitle?: string;
+	customContentHtml?: string;
+}
+
+const {
+	title = "Votre déboucheur à Liège",
+	subtitle = "Débouchage Liège Bob24 : le déboucheur qui assure ses services de débouchage dans tous les quartiers de Liège",
+	customContentHtml
+} = Astro.props;
 ---
 
 <section class="about-liege">
 	<div class="about-liege__inner">
-		<h2 class="about-liege__title">Votre déboucheur à Liège</h2>
-		<h3 class="about-liege__subtitle">Débouchage Liège Bob24 : le déboucheur qui assure ses services de débouchage dans tous les quartiers de Liège</h3>
+		<h2 class="about-liege__title">{title}</h2>
+		<h3 class="about-liege__subtitle">{subtitle}</h3>
 
 		<div class="about-liege__text">
-			<p>Débouchage Liège Bob24 : le déboucheur qui assure ses services de débouchage dans tous les quartiers de Liège. Notre équipe intervient chaque jour pour résoudre vos problèmes de canalisations bouchées, que ce soit dans un appartement, un habitat individuel ou un commerce. Grâce à notre expertise et à nos équipements professionnels, nous garantissons un débouchage rapide, propre et durable.&nbsp;</p>
+			{customContentHtml ? (
+				<div set:html={customContentHtml} />
+			) : (
+				<>
+					<p>Débouchage Liège Bob24 : le déboucheur qui assure ses services de débouchage dans tous les quartiers de Liège. Notre équipe intervient chaque jour pour résoudre vos problèmes de canalisations bouchées, que ce soit dans un appartement, un habitat individuel ou un commerce. Grâce à notre expertise et à nos équipements professionnels, nous garantissons un débouchage rapide, propre et durable.&nbsp;</p>
 
-			<p>
-				<img
-					decoding="async"
-					class="about-liege__city-img"
-					src="/images/debouchage-liege-ville.jpg"
-					alt="Débouchage Liège Ville 24h"
-					width="2272"
-					height="736"
-					srcset="/images/debouchage-liege-ville.jpg 2272w, /images/debouchage-liege-ville-1024x332.jpg 1024w, /images/debouchage-liege-ville-768x249.jpg 768w, /images/debouchage-liege-ville-600x194.jpg 600w, /images/debouchage-liege-ville-370x120.jpg 370w"
-					sizes="(max-width: 2272px) 100vw, 2272px"
-				/>
-			</p>
+					<p>
+						<img
+							decoding="async"
+							class="about-liege__city-img"
+							src="/images/debouchage-liege-ville.jpg"
+							alt="Débouchage Liège Ville 24h"
+							width="2272"
+							height="736"
+						/>
+					</p>
 
-			<p>Bob24 couvre 100 % des <b>quartiers de Liège</b>, du <b>centre-ville</b> à Outremeuse, en passant par Sainte-Walburge, Angleur, Grivegnée, Jupille et bien d'autres. Peu importe où vous vous trouvez, un déboucheur spécialisé peut être dépêché sur place en quelques minutes. Cette proximité nous permet d'offrir un service fiable et réactif, même lors des heures de pointe ou en pleine soirée.&nbsp;</p>
+					<p>Bob24 couvre 100 % des <b>quartiers de Liège</b>, du <b>centre-ville</b> à Outremeuse, en passant par Sainte-Walburge, Angleur, Grivegnée, Jupille et bien d'autres. Peu importe où vous vous trouvez, un déboucheur spécialisé peut être dépêché sur place en quelques minutes. Cette proximité nous permet d'offrir un service fiable et réactif, même lors des heures de pointe ou en pleine soirée.&nbsp;</p>
 
-			<p>Nos déboucheurs sont formés pour intervenir sur tous types d'obstructions : WC bouchés, éviers engorgés, conduites saturées, égouts obstrués, mauvaises odeurs, problèmes de refoulement… Chaque intervention commence par un diagnostic précis, souvent à l'aide d'une caméra d'inspection, afin de comprendre l'origine du bouchon et d'apporter la solution la plus efficace.&nbsp;</p>
+					<p>Nos déboucheurs sont formés pour intervenir sur tous types d'obstructions : WC bouchés, éviers engorgés, conduites saturées, égouts obstrués, mauvaises odeurs, problèmes de refoulement… Chaque intervention commence par un diagnostic précis, souvent à l'aide d'une caméra d'inspection, afin de comprendre l'origine du bouchon et d'apporter la solution la plus efficace.&nbsp;</p>
 
-			<p>Chez Bob24, nous misons sur la transparence et la satisfaction du client. Avant toute intervention, nous expliquons clairement le prix, la méthode utilisée et le temps estimé. Aucune surprise sur la facture, aucun frais caché.&nbsp;</p>
+					<p>Chez Bob24, nous misons sur la transparence et la satisfaction du client. Avant toute intervention, nous expliquons clairement le prix, la méthode utilisée et le temps estimé. Aucune surprise sur la facture, aucun frais caché.&nbsp;</p>
 
-			<p>Notre objectif est simple : <b>vous dépanner rapidement tout en vous offrant un service de qualité supérieure.&nbsp;</b></p>
+					<p>Notre objectif est simple : <b>vous dépanner rapidement tout en vous offrant un service de qualité supérieure.&nbsp;</b></p>
 
-			<p>Que vous soyez un particulier, un syndic ou un professionnel, vous pouvez compter sur Bob24 Débouchage Liège pour des interventions 24h/24 et 7j/7, dans tous les quartiers de Liège. Un problème de canalisation n'attend pas : contactez Bob24 et bénéficiez d'un débouchage fiable, durable et réalisé par des experts passionnés par leur métier.</p>
+					<p>Que vous soyez un particulier, un syndic ou un professionnel, vous pouvez compter sur Bob24 Débouchage Liège pour des interventions 24h/24 et 7j/7, dans tous les quartiers de Liège. Un problème de canalisation n'attend pas : contactez Bob24 et bénéficiez d'un débouchage fiable, durable et réalisé par des experts passionnés par leur métier.</p>
+				</>
+			)}
 		</div>
 	</div>
 </section>
@@ -73,16 +88,16 @@
 		line-height: 1.7;
 	}
 
-	.about-liege__text p {
+	.about-liege__text :global(p) {
 		margin-bottom: 1.25rem;
 	}
 
-	.about-liege__text b {
+	.about-liege__text :global(b) {
 		color: #222626;
 		font-weight: 600;
 	}
 
-	.about-liege__city-img {
+	:global(.about-liege__city-img) {
 		width: 100%;
 		height: auto;
 		display: block;

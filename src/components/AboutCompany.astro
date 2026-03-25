@@ -1,14 +1,29 @@
 ---
+export interface Props {
+	title?: string;
+	paragraphs?: string[];
+	imageSrc?: string;
+}
+
+const {
+	title = "Sociétés de débouchage canalisations à Liège",
+	paragraphs = [
+		"BOB24 intervient partout à Liège grâce à une mobilité totale et des équipes prêtes à se déplacer rapidement dans tous les quartiers de la ville.",
+		`Nous disposons d’une flotte de véhicules modernes entièrement équipés avec du matériel de dernière génération. Caméras d’inspection haute résolution, <a href="https://www.hydrosphere.be/fr/systemes-de-surpression/" target="_blank" rel="noopener">systèmes hydrodynamiques haute pression</a>, outils électromécaniques puissants : chaque intervention est menée avec précision pour garantir un débouchage rapide, durable et sans dégâts pour vos installations.`,
+		"Nos déboucheurs sont disponibles immédiatement pour gérer toutes vos urgences et rétablir vos canalisations en un temps record."
+	],
+	imageSrc = "/images/societe-debouchage-liege-1024x895.jpg"
+} = Astro.props;
 ---
 
 <section class="about-company">
 	<div class="about-company__inner">
 		<div class="about-company__content">
-			<h2 class="about-company__title">Sociétés de débouchage canalisations à Liège</h2>
+			<h2 class="about-company__title">{title}</h2>
 			<div class="about-company__text">
-				<p>BOB24 intervient partout à Liège grâce à une mobilité totale et des équipes prêtes à se déplacer rapidement dans tous les quartiers de la ville.</p>
-				<p>Nous disposons d’une flotte de véhicules modernes entièrement équipés avec du matériel de dernière génération. Caméras d’inspection haute résolution, <a href="https://www.hydrosphere.be/fr/systemes-de-surpression/" target="_blank" rel="noopener">systèmes hydrodynamiques haute pression</a>, outils électromécaniques puissants : chaque intervention est menée avec précision pour garantir un débouchage rapide, durable et sans dégâts pour vos installations.</p>
-				<p>Nos déboucheurs sont disponibles immédiatement pour gérer toutes vos urgences et rétablir vos canalisations en un temps record.</p>
+				{paragraphs.map((p) => (
+					<p set:html={p} />
+				))}
 			</div>
 			
 			<div class="about-company__actions">
@@ -25,7 +40,7 @@
 		</div>
 
 		<div class="about-company__image-wrapper">
-			<img src="/images/societe-debouchage-liege-1024x895.jpg" alt="Société de débouchage à Liège" class="about-company__image" loading="lazy" decoding="async" />
+			<img src={imageSrc} alt="" class="about-company__image" loading="lazy" decoding="async" />
 		</div>
 	</div>
 </section>
@@ -75,13 +90,13 @@
 		margin-bottom: 15px;
 	}
 
-	.about-company__text a {
+	.about-company__text :global(a) {
 		color: #5aa4a9;
 		text-decoration: none;
 		font-weight: 500;
 		transition: color 0.3s;
 	}
-	.about-company__text a:hover {
+	.about-company__text :global(a):hover {
 		color: #35717A;
 	}
 
@@ -205,3 +220,4 @@
 		}
 	}
 </style>
+

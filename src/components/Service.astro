@@ -1,30 +1,33 @@
 ---
+export interface Props {
+	subtitle?: string;
+	title?: string;
+	paragraphs?: string[];
+	imageSrc?: string;
+}
+
+const {
+	subtitle = "Service débouchage Liège - 4000",
+	title = "Besoin d’un débouchage immédiat à Liège ?",
+	paragraphs = [
+		`BOB24 Liège est votre acteur de confiance pour toute intervention urgente de <a href="/debouchage-canalisation">débouchage de canalisations</a>. Nous mettons notre expertise au service des habitants de la Cité Ardente. Nous utilisons un matériel de haute qualité (Rothembenger, Kärcher etc..) pour déboucher vos égouts dans les meilleures conditions.`,
+		`Nos équipes sont actives quotidiennement à travers toute l’agglomération liégeoise, que vous soyez aux Guillemins, à Rocourt, Grivegnée, Angleur, Outremeuse ou Sclessin. Chaque intervention est réalisée avec une qualité irréprochable.`,
+		`Pour un plombier sérieux et engagé à Liège, appelez le 0470 062 110 et laissez-nous nous occuper du reste.`
+	],
+	imageSrc = "/images/service-plombier-liege-1024x961.jpg"
+} = Astro.props;
 ---
 
 <section class="service">
 	<div class="service__inner">
 		<div class="service__content-col">
-			<h2 class="service__subtitle">Service débouchage Liège - 4000</h2>
-			<h3 class="service__title">Besoin d’un débouchage immédiat à Liège ?</h3>
+			<h2 class="service__subtitle">{subtitle}</h2>
+			<h3 class="service__title">{title}</h3>
 
 			<div class="service__text">
-				<p>
-					BOB24 Liège est votre acteur de confiance pour toute intervention
-					urgente de <a href="/debouchage-canalisation"
-						>débouchage de canalisations</a>. Nous mettons notre expertise au service des habitants de la Cité
-					Ardente. Nous utilisons un matériel de haute qualité (Rothembenger,
-					Kärcher etc..) pour déboucher vos égouts dans les meilleures conditions.
-				</p>
-				<p>
-					Nos équipes sont actives quotidiennement à travers toute l’agglomération
-					liégeoise, que vous soyez aux Guillemins, à Rocourt, Grivegnée, Angleur,
-					Outremeuse ou Sclessin. Chaque intervention est réalisée avec une qualité
-					irréprochable.
-				</p>
-				<p>
-					Pour un plombier sérieux et engagé à Liège, appelez le 0470 062 110 et
-					laissez-nous nous occuper du reste.
-				</p>
+				{paragraphs.map((p) => (
+					<p set:html={p} />
+				))}
 			</div>
 
 			<div class="service__buttons">
@@ -45,10 +48,8 @@
 				decoding="async"
 				width="1024"
 				height="961"
-				src="/images/service-plombier-liege-1024x961.jpg"
-				alt="Service Débouchage Liège"
-				srcset="/images/service-plombier-liege-1024x961.jpg 1024w, /images/service-plombier-liege-300x282.jpg 300w, /images/service-plombier-liege-768x721.jpg 768w, /images/service-plombier-liege-370x347.jpg 370w"
-				sizes="(max-width: 1024px) 100vw, 1024px"
+				src={imageSrc}
+				alt="Service"
 			/>
 		</div>
 	</div>
@@ -92,7 +93,7 @@
 	/* Typography */
 	.service__subtitle {
 		font-family: inherit;
-		font-size: 33px;
+		font-size: 45px;
 		color: #222626;
 		margin-top: 0;
 		margin-bottom: 10px;
@@ -103,8 +104,7 @@
 		font-family: "Roboto", sans-serif;
 		font-size: 22px;
 		font-weight: 500;
-		color: #35717A;
-		margin-top: 0;
+ 		margin-top: 0;
 		margin-bottom: 25px;
 		line-height: 1.3;
 	}
@@ -119,7 +119,7 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.service__text a {
+	.service__text :global(a) {
 		color: #35717A;
 		text-decoration: underline;
 	}

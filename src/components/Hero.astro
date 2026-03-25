@@ -1,21 +1,31 @@
 ---
+export interface Props {
+	title?: string;
+	descriptionHtml?: string;
+	workersCount?: number;
+	workersLabel?: string;
+	bgImage?: string;
+}
+
+const {
+	title = "Débouchage Liège",
+	descriptionHtml = "Besoin d'un débouchage urgent à Liège ? Contactez dès maintenant Bob24. Chaque intervention de débouchage <b>représente un véritable défi</b> pour nos déboucheurs.",
+	workersCount = 13,
+	workersLabel = "plombiers",
+	bgImage = "/images/plombier-liege.jpg"
+} = Astro.props;
 ---
 
 <section class="hero">
-	<div class="hero__image-col" aria-hidden="true">
+	<div class="hero__image-col" aria-hidden="true" style={`--bg-img: url('${bgImage}')`}>
 		<!-- background image column -->
 	</div>
 
 	<div class="hero__content-col">
-		<h1 class="hero__title">Débouchage Liège</h1>
+		<h1 class="hero__title">{title}</h1>
 
 		<div class="hero__text">
-			<p>
-				Besoin d'un débouchage urgent à Liège ? Contactez dès
-				maintenant Bob24. Chaque intervention de débouchage <b
-					>représente un véritable défi</b
-				> pour nos déboucheurs.
-			</p>
+			<p set:html={descriptionHtml} />
 			<p>
 				<img
 					decoding="async"
@@ -25,7 +35,7 @@
 					src="https://s.w.org/images/core/emoji/16.0.1/svg/1f7e2.svg"
 					alt="🟢"
 				/>
-				13 plombiers sont <strong>disponibles</strong> en ce moment à
+				{workersCount} {workersLabel} sont <strong>disponibles</strong> en ce moment à
 				Liège.
 			</p>
 		</div>
@@ -98,7 +108,7 @@
 		width: 39.393%;
 		flex-shrink: 0;
 		background-color: #ffe8f0;
-		background-image: url("/images/plombier-liege.jpg");
+		background-image: var(--bg-img, url("/images/plombier-liege.jpg"));
 		background-position: top center;
 		background-repeat: no-repeat;
 		background-size: cover;

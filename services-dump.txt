@@ -1,0 +1,21 @@
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Besoin d’un Plombier immédiat à Liège ?</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Plombier Liège Bob24 : le plombier qui assure ses services dans tous les quartiers de Liège</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Plomberie générale</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Réparation de fuites d’eau</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Installation sanitaire</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Installation & dépannage chauffe-eau</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Rénovation plomberie</span></h3>
+<h3 class="sc_item_title sc_title_title sc_item_title_style_default sc_item_title_tag"
+			><span class="sc_item_title_text">Dépannage plomberie en urgence</span></h3>
+<h3>Diagnostic rapide &amp; techniques professionnelles</h3>
+<h3>Tarifs compétitifs &amp; aucune surprise</h3>
+<h3>Tarification compétitive — pas de surcoûts cachés</h3>
+<h3>Pas de surprise : garanties et facturation claire</h3>
+<h3>Pourquoi nous choisir plutôt qu’un concurrent ?</h3>

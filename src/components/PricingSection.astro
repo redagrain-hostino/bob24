@@ -1,10 +1,17 @@
 ---
+export interface Props {
+	title?: string;
+}
+
+const {
+	title = "Meilleur prix débouchage Liège — Devis clair avant déplacement, zéro surprise"
+} = Astro.props;
 ---
 
 <section class="pricing-section">
 	<div class="pricing-section__inner">
 		<!-- Main Title -->
-		<h2 class="pricing-section__title">Meilleur prix débouchage Liège — Devis clair avant déplacement, zéro surprise</h2>
+		<h2 class="pricing-section__title">{title}</h2>
 
 		<!-- Content -->
 		<div class="pricing-section__content">

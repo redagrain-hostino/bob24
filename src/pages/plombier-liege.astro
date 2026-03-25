@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Service from "../components/Service.astro";
+import AboutLiege from "../components/AboutLiege.astro";
+import ContactForm from "../components/ContactForm.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import AboutCompany from "../components/AboutCompany.astro";
+import Testimonials from "../components/Testimonials.astro";
+import PricingSection from "../components/PricingSection.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+import CTABanner from "../components/CTABanner.astro";
+---
+
+<Layout title="Plombier Liège | Top des plombiers liégeois 2026">
+	<Hero
+		title="Plombier Liège"
+		descriptionHtml="Besoin d’un plombier à Liège ? Contactez dès maintenant Bob24. Chaque intervention représente un véritable défi pour nos plombiers."
+		workersCount={13}
+		workersLabel="plombiers"
+		bgImage="/images/plombier-sur-ville-liege.jpg"
+	/>
+	<CTABanner />
+	<Service 
+		subtitle="Service Plombier Liège - 4000"
+		title="Besoin d’un Plombier immédiat à Liège ?"
+		paragraphs={[
+			"BOB24 propose les meilleurs plombiers de confiance à Liège. Spécialisés dans les interventions urgentes et les travaux de plomberie, nous assurons le débouchage de canalisations, la réparation de fuites, l’entretien des égouts et l’installation de vos sanitaires.",
+			"Présents quotidiennement dans toute l’agglomération liégeoise — des Guillemins à Rocourt, Grivegnée, Angleur, Outremeuse ou Sclessin — nous intervenons rapidement et avec sérieux, pour particuliers comme pour entreprises.",
+			"Pour un plombier fiable et réactif à Liège, contactez BOB24 au 0470 062 110. Nous prenons en charge votre problème du début à la fin, pour un résultat irréprochable et durable."
+		]}
+		imageSrc="/images/plombier-liege-24-1024x961.jpg"
+	/> 
+	<AboutLiege 
+		title="Votre Plombier à Liège"
+		subtitle="Plombier Liège Bob24 : le plombier qui assure ses services dans tous les quartiers de Liège"
+		customContentHtml={`
+			<p>Plombier Liège Bob24 : le plombier qui assure ses services de débouchage dans tous les quartiers de Liège. Notre équipe intervient chaque jour pour résoudre vos problèmes de canalisations bouchées, que ce soit dans un appartement, un habitat individuel ou un commerce. Grâce à notre expertise et à nos équipements professionnels, nous garantissons un débouchage rapide, propre et durable.</p>
+			<p><img decoding="async" class="about-liege__city-img" src="/images/debouchage-liege-ville.jpg" alt="Plombier Liège Ville 24h" width="2272" height="736" /></p>
+			<p>Bob24 couvre 100 % des <b>quartiers de Liège</b>, du <b>centre-ville</b> à Outremeuse, en passant par Sainte-Walburge, Angleur, Grivegnée, Jupille et bien d&apos;autres. Peu importe où vous vous trouvez, un déboucheur spécialisé peut être dépêché sur place en quelques minutes. Cette proximité nous permet d&apos;offrir un service fiable et réactif, même lors des heures de pointe ou en pleine soirée.</p>
+			<p>Nos déboucheurs sont formés pour intervenir sur tous types d&apos;obstructions : WC bouchés, éviers engorgés, conduites saturées, égouts obstrués, mauvaises odeurs, problèmes de refoulement… Chaque intervention commence par un diagnostic précis, souvent à l&apos;aide d&apos;une caméra d&apos;inspection, afin de comprendre l&apos;origine du bouchon et d&apos;apporter la solution la plus efficace.</p>
+			<p>Chez Bob24, nous misons sur la transparence et la satisfaction du client. Avant toute intervention, nous expliquons clairement le prix, la méthode utilisée et le temps estimé. Aucune surprise sur la facture, aucun frais caché.</p>
+			<p>Notre objectif est simple : <b>vous dépanner rapidement tout en vous offrant un service de qualité supérieure.</b></p>
+			<p>Que vous soyez un particulier, un syndic ou un professionnel, vous pouvez compter sur Bob24 Débouchage Liège pour des interventions 24h/24 et 7j/7, dans tous les quartiers de Liège. Un problème de canalisation n&apos;attend pas : contactez Bob24 et bénéficiez d&apos;un débouchage fiable, durable et réalisé par des experts passionnés par leur métier.</p>
+		`}
+	/>
+	<ContactForm /> 
+	<ServicesGrid 
+		title="Nos services Plombier Liège"
+		services={[
+			{
+				title: "Plomberie générale",
+				description: "Interventions rapides à Liège pour tous vos travaux de plomberie : installations, réparations et dépannages, réalisés par des plombiers qualifiés.",
+				link: null
+			},
+			{
+				title: "Réparation de fuites d’eau",
+				description: "Détection et réparation efficace de fuites d’eau visibles ou encadrées, afin d’éviter tout dégât et surconsommation.",
+				link: null
+			},
+			{
+				title: "Installation sanitaire",
+				description: "Installation et remplacement de vos équipements sanitaires : WC, lavabo, douche, baignoire et robinetterie.",
+				link: null
+			},
+			{
+				title: "Installation & dépannage chauffe-eau",
+				description: "Installation, entretien et dépannage de chauffe-eau électriques ou boilers, pour garantir votre confort au quotidien.",
+				link: null
+			},
+			{
+				title: "Rénovation plomberie",
+				description: "Rénovation complète ou partielle de votre réseau de plomberie, adaptée aux normes belges et à votre habitation.",
+				link: null
+			},
+			{
+				title: "Dépannage plomberie en urgence",
+				description: "Service de dépannage plomberie rapide à Liège et alentours, en cas de fuite, panne ou problème sanitaire urgent.",
+				link: null
+			}
+		]} 
+	/>
+	<AboutCompany
+		title="Sociétés de plomberie générale et canalisations à Liège"
+		paragraphs={[
+			"BOB24 intervient partout à Liège grâce à une mobilité totale et des équipes prêtes à se déplacer rapidement dans tous les quartiers de la ville.",
+			`Nous disposons d'une flotte de véhicules modernes entièrement équipés avec du matériel de dernière génération. Caméras d'inspection haute résolution, <a href="https://www.hydrosphere.be/fr/systemes-de-surpression/" target="_blank" rel="noopener">systèmes hydrodynamiques haute pression</a>, outils électromécaniques puissants : chaque intervention est menée avec précision pour garantir un débouchage rapide, durable et sans dégâts pour vos installations.`,
+			"Nos plombiers sont disponibles immédiatement pour gérer toutes vos urgences et rétablir vos canalisations en un temps record."
+		]}
+	/>
+	<Testimonials />
+	<PricingSection title="Meilleur prix Plombier Liège — Devis clair avant déplacement, zéro surprise" />
+	<CTAStrip />
+</Layout> 
+

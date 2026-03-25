@@ -1,65 +1,66 @@
 ---
+export interface Props {
+	title?: string;
+	services?: {
+		title: string;
+		description: string;
+		link: string | null;
+	}[];
+}
+
+const {
+	title = "Nos services Débouchage Liège",
+	services = [
+		{
+			title: "Débouchage de canalisation",
+			description: "Intervention rapide pour déboucher vos canalisations, avec un diagnostic précis et des solutions durables proposées par Bob24 à Liège.",
+			link: "/debouchage-canalisation/"
+		},
+		{
+			title: "Débouchage des égouts",
+			description: "Solution fiable pour déboucher vos égouts, grâce à une intervention rapide et soignée réalisée par l'équipe Bob24 à Liège.",
+			link: "/debouchage-egout/"
+		},
+		{
+			title: "Inspection avec caméra",
+			description: "Inspection précise de vos canalisations grâce à une caméra professionnelle pour localiser rapidement tout problème.",
+			link: "/inspection-avec-camera"
+		},
+		{
+			title: "Curage canalisation",
+			description: "Curage complet de vos canalisations pour éliminer résidus, graisses et dépôts, et restaurer un écoulement optimal.",
+			link: "/curage-canalisation"
+		},
+		{
+			title: "Vidange de fosse septique",
+			description: "Vidange Pro de votre fosse septique, avec intervention rapide et gestion propre des déchets pour assurer le bon fonctionnement de votre installation.",
+			link: "/vidange-fosse-septique"
+		},
+		{
+			title: "Réparation des égouts",
+			description: "Réparation durable de vos égouts, avec une intervention rapide pour identifier, sécuriser et remettre en état votre réseau d’évacuation.",
+			link: "/reparation-des-egouts"
+		}
+	]
+} = Astro.props;
 ---
 
 <section class="services-grid">
 	<div class="services-grid__inner">
 		<div class="services-grid__header">
-			<h2 class="services-grid__main-title">Nos services Débouchage Liège</h2>
+			<h2 class="services-grid__main-title">{title}</h2>
 		</div>
 
 		<div class="services-grid__columns">
-			<!-- Col 1 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Débouchage de canalisation</h3>
-				<div class="services-grid__text">
-					<p>Intervention rapide pour déboucher vos canalisations, avec un diagnostic précis et des solutions durables proposées par Bob24 à Liège.</p>
+			{services.map(service => (
+				<div class="services-grid__item">
+					<h3 class="services-grid__title">{service.title}</h3>
+					<div class="services-grid__text">
+						<p>{service.description}</p>
+					</div>
+					{service.link ? <a href={service.link} class="services-grid__btn">Lire la suite</a> : null}
 				</div>
-				<a href="/debouchage-canalisation/" class="services-grid__btn">Lire la suite</a>
-			</div>
-			
-			<!-- Col 2 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Débouchage des égouts</h3>
-				<div class="services-grid__text">
-					<p>Solution fiable pour déboucher vos égouts, grâce à une intervention rapide et soignée réalisée par l'équipe Bob24 à Liège.</p>
-				</div>
-				<a href="/debouchage-egout/" class="services-grid__btn">Lire la suite</a>
-			</div>
-			
-			<!-- Col 3 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Inspection avec caméra</h3>
-				<div class="services-grid__text">
-					<p>Inspection précise de vos canalisations grâce à une caméra professionnelle pour localiser rapidement tout problème.</p>
-				</div>
-				<a href="/inspection-avec-camera" class="services-grid__btn">Lire la suite</a>
-			</div>
-			<!-- Col 4 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Curage canalisation</h3>
-				<div class="services-grid__text">
-					<p>Curage complet de vos canalisations pour éliminer résidus, graisses et dépôts, et restaurer un écoulement optimal.</p>
-				</div>
-				<a href="/curage-canalisation" class="services-grid__btn">Lire la suite</a>
-			</div>
-			 
-			<!-- Col 5 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Vidange de fosse septique</h3>
-				<div class="services-grid__text">
-					<p>Vidange Pro de votre fosse septique, avec intervention rapide et gestion propre des déchets pour assurer le bon fonctionnement de votre installation.</p>
-				</div>
-				<a href="/vidange-fosse-septique" class="services-grid__btn">Lire la suite</a>
-			</div>
-			
-			<!-- Col 6 -->
-			<div class="services-grid__item">
-				<h3 class="services-grid__title">Réparation des égouts</h3>
-				<div class="services-grid__text">
-					<p>Réparation durable de vos égouts, avec une intervention rapide pour identifier, sécuriser et remettre en état votre réseau d’évacuation.</p>
-				</div>
-				<a href="/reparation-des-egouts" class="services-grid__btn">Lire la suite</a>
-			</div>
+			))}
 		</div>
 	</div>
 </section> 
