@@ -5,6 +5,10 @@ import Service from "../components/Service.astro";
 import AboutLiege from "../components/AboutLiege.astro";
 import ContactForm from "../components/ContactForm.astro";
 import ServicesGrid from "../components/ServicesGrid.astro";
+import AboutCompany from "../components/AboutCompany.astro";
+import Testimonials from "../components/Testimonials.astro";
+import PricingSection from "../components/PricingSection.astro";
+import CTAStrip from "../components/CTAStrip.astro";
 ---
 
 <Layout title="Débouchage Liège | Bob24 - Plombier d'urgence">
@@ -22,11 +26,15 @@ import ServicesGrid from "../components/ServicesGrid.astro";
 			</a>
 		</div>
 	</section>
-	<Service />
+	<Service /> 
 	<AboutLiege />
 	<ContactForm /> 
 	<ServicesGrid />
-</Layout>
+	<AboutCompany />
+	<Testimonials />
+	<PricingSection />
+	<CTAStrip />
+</Layout> 
 
 <style>
 	@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");

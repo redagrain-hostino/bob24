@@ -1,0 +1,394 @@
+---
+---
+
+<div class="footer-call-banner">
+  <!-- Badge 3 plombiers disponibles avec photos -->
+  <div class="tech-badge">
+    <div class="tech-avatars">
+      <!-- REMPLACEZ CES URLs PAR VOS PROPRES PHOTOS DE PLOMBIERS -->
+      <img src="https://www.bob24.be/plombier1.jpg" alt="Plombier 1" class="tech-avatar">
+      <img src="https://www.bob24.be/plombier2.jpg" alt="Plombier 2" class="tech-avatar">
+      <img src="https://www.bob24.be/plombier3.jpg" alt="Plombier 3" class="tech-avatar">
+    </div>
+    <span class="status-dot"></span>
+    <span class="tech-text"><strong>13 plombiers</strong> disponibles</span>
+  </div>
+  
+  <!-- Section appel -->
+  <div class="call-section">
+    <a href="tel:+32497546868" class="call-link">
+      <div class="icon-wrapper">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9983 21.4142 21.3891C21.0391 21.7799 20.5304 22.0057 20 22.02C16.9429 21.7007 14.0045 20.6949 11.39 19.07C8.95 17.5806 6.88061 15.5112 5.39 13.07C3.76 10.4463 2.75418 7.49619 2.44 4.42998C2.42528 3.90048 2.64998 3.39243 3.0392 3.01719C3.42843 2.64195 3.9551 2.43022 4.5 2.42998H7.5C8.45 2.42019 9.28866 3.10494 9.48 4.03998C9.64 4.84998 9.89 5.64 10.22 6.38998C10.4685 6.97082 10.3363 7.64553 9.88 8.08998L8.65 9.31998C10.0368 11.8038 12.1362 13.9032 14.62 15.29L15.85 14.06C16.2945 13.6037 16.9692 13.4715 17.55 13.72C18.29 14.05 19.08 14.3 19.89 14.46C20.8351 14.6531 21.5298 15.4997 21.52 16.46L22 16.92Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="call-info">
+        <span class="call-label">Appelez-nous</span>
+        <span class="call-number">0497 54 68 68</span>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Bouton téléphoner -->
+  <a href="tel:+32497546868" class="call-btn">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9983 21.4142 21.3891C21.0391 21.7799 20.5304 22.0057 20 22.02C16.9429 21.7007 14.0045 20.6949 11.39 19.07C8.95 17.5806 6.88061 15.5112 5.39 13.07C3.76 10.4463 2.75418 7.49619 2.44 4.42998C2.42528 3.90048 2.64998 3.39243 3.0392 3.01719C3.42843 2.64195 3.9551 2.43022 4.5 2.42998H7.5C8.45 2.42019 9.28866 3.10494 9.48 4.03998C9.64 4.84998 9.89 5.64 10.22 6.38998C10.4685 6.97082 10.3363 7.64553 9.88 8.08998L8.65 9.31998C10.0368 11.8038 12.1362 13.9032 14.62 15.29L15.85 14.06C16.2945 13.6037 16.9692 13.4715 17.55 13.72C18.29 14.05 19.08 14.3 19.89 14.46C20.8351 14.6531 21.5298 15.4997 21.52 16.46L22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    Téléphonez
+  </a>
+</div>
+
+<style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+	
+	*, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding-bottom: 70px !important; 
+    }
+
+    /* Responsive Mobile Offset */
+    @media (max-width: 680px) {
+        body {
+            padding-bottom: 170px !important;
+        }
+    }
+    
+    @media (max-width: 380px) {
+        body {
+            padding-bottom: 135px !important;
+        }
+    }
+</style>
+
+<style>
+    .footer-call-banner {
+        background: linear-gradient(135deg, #00c896 0%, #00a67d 50%, #008f6b 100%);
+        padding: 8px 24px 14px; /* Decreased banner space from top originally 14px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100vw;
+        z-index: 999999;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .footer-call-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        animation: shimmer 3s infinite;
+        pointer-events: none;
+    }
+
+    @keyframes shimmer {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(50%); }
+    }
+
+    .tech-badge {
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 30px;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        flex-shrink: 0;
+    }
+
+    .tech-avatars {
+        display: flex;
+        margin-right: 4px;
+        flex-shrink: 0;
+    }
+
+    .tech-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #1a1a1a;
+        margin-left: -10px;
+        object-fit: cover;
+        background: #444;
+        flex-shrink: 0;
+    }
+
+    .tech-avatar:first-child {
+        margin-left: 0;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        background: #00ff88;
+        border-radius: 50%;
+        animation: pulse-dot 2s infinite;
+        box-shadow: 0 0 10px #00ff88;
+        flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.2); }
+    }
+
+    .tech-text {
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .tech-text strong {
+        font-weight: 700;
+    }
+
+    .call-section {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 1;
+    }
+
+    .call-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .call-link:hover {
+        transform: scale(1.02);
+    }
+
+    .icon-wrapper {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: ring-pulse 2s infinite;
+        flex-shrink: 0;
+    }
+
+    @keyframes ring-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+        50% { box-shadow: 0 0 0 12px rgba(255,255,255,0); }
+        100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    .icon-wrapper svg {
+        animation: shake 2s infinite;
+        flex-shrink: 0;
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: rotate(0deg); }
+        5% { transform: rotate(-15deg); }
+        10% { transform: rotate(15deg); }
+        15% { transform: rotate(-10deg); }
+        20% { transform: rotate(10deg); }
+        25% { transform: rotate(0deg); }
+    }
+
+    .call-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .call-label {
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+        color: white;
+        white-space: nowrap;
+    }
+
+    .call-number {
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: white;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    .call-btn {
+        background: white;
+        color: #00a67d;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        z-index: 1;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .call-btn:hover {
+        background: #f0fff8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .call-btn svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    /* Responsive Tablette */
+    @media (max-width: 900px) {
+        .footer-call-banner {
+            padding: 8px 16px 12px;
+            gap: 15px;
+        }
+
+        .call-number {
+            font-size: 22px;
+        }
+
+        .call-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 680px) {
+        .footer-call-banner {
+            flex-direction: column;
+            padding: 8px 16px 12px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .tech-badge {
+            order: -1;
+            padding: 6px 12px;
+            max-width: 100%;
+        }
+
+        .tech-avatar {
+            width: 28px;
+            height: 28px;
+        }
+
+        .tech-text {
+            font-size: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+        }
+
+        .call-section {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .call-link {
+            gap: 12px;
+        }
+
+        .icon-wrapper {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+        }
+
+        .call-number {
+            font-size: 24px;
+        }
+
+        .call-label {
+            font-size: 10px;
+        }
+
+        .call-btn {
+            width: calc(100% - 32px);
+            max-width: 300px;
+            justify-content: center;
+            padding: 12px 20px;
+            font-size: 15px;
+        }
+    }
+
+    /* Responsive très petit écran */
+    @media (max-width: 380px) {
+        .footer-call-banner {
+            padding: 6px 12px 10px;
+            gap: 8px;
+        }
+
+        .tech-badge {
+            padding: 5px 10px;
+            gap: 6px;
+        }
+
+        .tech-avatar {
+            width: 24px;
+            height: 24px;
+            margin-left: -8px;
+        }
+
+        .tech-text {
+            font-size: 11px;
+        }
+
+        .call-number {
+            font-size: 20px;
+        }
+
+        .icon-wrapper {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+        }
+
+        .icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .call-btn {
+            padding: 10px 16px;
+            font-size: 14px;
+            width: calc(100% - 24px);
+        }
+    }
+</style>

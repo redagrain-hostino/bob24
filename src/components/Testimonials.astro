@@ -1,0 +1,242 @@
+---
+const testimonials = [
+	{
+		content:
+			"J’avais un gros problème de canalisation bouchée dans mon évier à Liège. L’équipe de Bob24 a tout réparé rapidement et proprement. Merci BoB24.",
+		author: "Emma Delacroix",
+		subtitle: "Longdoz, Liège",
+		avatar: "https://www.bob24.be/wp-content/uploads/2022/10/emma-debouchage-liege-120x120.jpg",
+	},
+	{
+		content:
+			"2ème fois que nous faisons appel à la société BOB24 et nouvelle excellente expérience! Intervention rapide à La Motte, Liège, personnel très agréable, les lieux sont rendus propres et fonctionnels. Je recommande!",
+		author: "Elise Peeters",
+		subtitle: "La Motte, Liège",
+		avatar: "https://www.bob24.be/wp-content/uploads/2022/10/guillaum-liege-debouchage-120x120.jpg",
+	},
+	{
+		content:
+			"Ils sont venus le jour même appel à 8h rendez-vous pour 10h. M’ont même téléphoné qu’ils seraient 15min en retard. Jack super rassurant.",
+		author: "Fien Vermeulen",
+		subtitle: "Embourg, Liège",
+		avatar: "https://www.bob24.be/wp-content/uploads/2022/10/Fien-Vermeulen-liege-120x120.jpg",
+	},
+	{
+		content:
+			"J’ai contacté Bob24 Liège un dimanche soir pour une canalisation complètement bouchée. Intervention en moins d’une heure, super équipe, rapide et efficace. Merci",
+		author: "Joost Dirckx",
+		subtitle: "Guillemins - Liège",
+		avatar: "https://www.bob24.be/wp-content/uploads/2022/10/client-liege-debouchage-jack-120x120.jpg",
+	},
+];
+---
+
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<section class="testimonials">
+	<div class="testimonials__inner">
+		<div class="testimonials__header">
+			<span class="testimonials__subtitle"
+				>Avis clients 100% Satisfaction</span
+			>
+			<h2 class="testimonials__title">Ce que disent nos clients</h2>
+		</div>
+
+		<div class="swiper testimonials-slider">
+			<div class="swiper-wrapper">
+				{
+					testimonials.map((item) => (
+						<div class="swiper-slide">
+							<div class="testimonials__item">
+								<div class="testimonials__content">
+									<p>{item.content}</p>
+								</div>
+								<div class="testimonials__author">
+									<img
+										src={item.avatar}
+										alt={item.author}
+										class="testimonials__avatar"
+										loading="lazy"
+									/>
+									<div class="testimonials__author-data">
+										<h4 class="testimonials__author-name">
+											{item.author}
+										</h4>
+										<span class="testimonials__author-subtitle">
+											{item.subtitle}
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+			<!-- Optional Swiper Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+	</div> 
+</section>
+
+<script
+	is:inline
+	src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", function () {
+		new Swiper(".testimonials-slider", {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				},
+			},
+		});
+	});
+</script>
+
+<style>
+	.testimonials {
+		margin-top: 80px;
+		margin-bottom: 80px;
+		font-family: "DM Sans", sans-serif;
+	}
+
+	.testimonials__inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+	.testimonials__header {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	.testimonials__subtitle {
+		display: block;
+		color: #222626;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 15px;
+	}
+
+	.testimonials__title {
+		font-size: 38px;
+		font-weight: 700;
+		color: #222626;
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	.testimonials-slider {
+		padding-bottom: 50px; /* Space for pagination */
+	}
+
+	.testimonials__item {
+		background-color: #f2f5f5;
+		padding: 45px 35px; /* Made the cards bigger */
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+		height: 100%;
+		min-height: 280px; /* Force bigger minimum size */
+	}
+
+	/* Force slider items to be same height */
+	.swiper-slide {
+		height: auto;
+	}
+
+	.testimonials__content {
+		color: #7a7a7a;
+		font-size: 19px; 
+		line-height: 1.7;
+		margin-bottom: 30px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.testimonials__content::before {
+		content: "“";
+		font-size: 90px;
+		color: #35717a;
+		opacity: 0.1;
+		position: absolute;
+		top: -45px;
+		left: -20px;
+		font-family: serif;
+		z-index: -1;
+	}
+
+	.testimonials__author {
+		display: flex;
+		align-items: center;
+		margin-top: auto;
+	}
+
+	.testimonials__avatar {
+		width: 65px;
+		height: 65px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-right: 15px;
+		border: 2px solid #ffffff;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	}
+
+	.testimonials__author-name {
+		font-size: 19px;
+		font-weight: 700;
+		color: #222626;
+		margin: 0 0 5px 0;
+	}
+
+	.testimonials__author-subtitle {
+		font-size: 15px;
+		color: #9c9c9c;
+		font-weight: 500;
+	}
+
+	/* Customize Swiper Pagination */
+	:global(.swiper-pagination-bullet) {
+		background-color: #c7c7c7 !important;
+		opacity: 0.5 !important;
+	}
+	:global(.swiper-pagination-bullet-active) {
+		background-color: #35717a !important;
+		opacity: 1 !important;
+	}
+
+	@media (max-width: 767px) {
+		.testimonials {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.testimonials__title {
+			font-size: 32px;
+		}
+		.testimonials__item {
+			padding: 35px 25px;
+		}
+	}
+</style>

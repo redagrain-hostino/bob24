@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import FooterCallBanner from '../components/FooterCallBanner.astro';
 
 interface Props {
 	title: string;
@@ -28,6 +29,7 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
+		<FooterCallBanner />
 	</body>
 </html>
 
