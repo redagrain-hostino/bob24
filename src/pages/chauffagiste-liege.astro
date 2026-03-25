@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Service from "../components/Service.astro";
+import AboutLiege from "../components/AboutLiege.astro";
+import ContactForm from "../components/ContactForm.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import AboutCompany from "../components/AboutCompany.astro";
+import Testimonials from "../components/Testimonials.astro";
+import PricingSection from "../components/PricingSection.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+import CTABanner from "../components/CTABanner.astro";
+---
+
+<Layout title="Chauffagiste Liège | Top des chauffagistes liégeois 2026">
+	<Hero
+		title="Chauffagiste Liège"
+		descriptionHtml="Besoin d&apos;un chauffagiste à Liège ? Contactez dès maintenant Bob24. Chaque intervention représente un véritable défi pour nos plombiers."
+		workersCount={13}
+		workersLabel="plombiers"
+		bgImage="/images/chauffage-liege.jpg"
+	/>
+	<CTABanner title="Chauffagistes disponibles à Liège jour et nuit, weekends et jours fériés" />
+	<Service
+		subtitle="Service Chauffagiste Liège - 4000"
+		title="Besoin d'un Chauffagiste immédiat à Liège?"
+		paragraphs={[
+			"BOB24 met à votre disposition les meilleurs chauffagistes  à Liège. Spécialisés dans les dépannages urgents et les travaux de chauffage, nous intervenons pour l'entretien et la réparation de chaudières, l'installation de systèmes de chauffage, le détartrage, ainsi que la maintenance de votre circuit thermique. Avec BOB24, vous bénéficiez d'un service rapide, fiable et professionnel.",
+			"Présents quotidiennement dans toute l'agglomération liégeoise — des Guillemins à Rocourt, Grivegnée, Angleur, Outremeuse ou Sclessin — nous intervenons rapidement et avec sérieux, pour particuliers comme pour entreprises.",
+			"Pour un chauffagiste fiable et réactif à Liège, contactez BOB24 au 0470 062 110. Nous prenons en charge votre problème du début à la fin, pour un résultat irréprochable et durable."
+		]}
+		imageSrc="/images/chauffagiste-liege-1024x961.jpg"
+	/>
+	<AboutLiege
+		title="Votre Chauffagiste à Liège"
+		subtitle="Chauffagiste Liège Bob24 : le plombier qui assure ses services dans tous les quartiers de Liège"
+		customContentHtml={`
+			<p>Chauffagiste Liège BOB24 : le spécialiste chauffage qui intervient dans tous les quartiers de Liège. Notre équipe se déplace chaque jour pour dépanner, entretenir ou installer vos systèmes de chauffage, que ce soit dans un appartement, une maison individuelle ou un commerce. Grâce à notre expertise et à nos équipements professionnels, nous assurons des interventions rapides, propres et durables pour garantir votre confort thermique toute l'année.</p>
+			<p><img decoding="async" class="about-liege__city-img" src="/images/debouchage-liege-ville.jpg" alt="Chauffagiste Liège Ville 24h" width="2272" height="736" /></p>
+			<p>Bob24 couvre 100 % des quartiers de Liège, du centre-ville à Outremeuse, en passant par Sainte-Walburge, Angleur, Grivegnée, Jupille et bien d&apos;autres. Où que vous soyez, un chauffagiste spécialisé peut être dépêché sur place en quelques minutes. Cette proximité nous permet d&apos;assurer un service fiable, réactif et efficace, même lors des heures de pointe ou en soirée.</p>
+			<p>Nos chauffagistes sont formés pour intervenir sur tous les systèmes de chauffage : chaudières gaz ou mazout, radiateurs, pompes à chaleur, chauffe-eau, circuits de chauffage, thermostats défectueux… Chaque intervention débute par un diagnostic précis, souvent accompagné d&apos;un contrôle approfondi, afin d&apos;identifier l&apos;origine du problème et vous proposer la solution la plus adaptée.</p>
+			<p>Chez Bob24, nous plaçons la transparence et la satisfaction client au cœur de notre service. Avant toute intervention, nous expliquons clairement le prix, la méthode utilisée et le temps estimé. Pas de frais cachés, pas de mauvaises surprises.</p>
+			<p>Notre objectif est simple : <b>vous dépanner rapidement tout en garantissant un confort thermique optimal.</b></p>
+			<p>Que vous soyez un particulier, un syndic ou un professionnel, vous pouvez compter sur Bob24 Chauffage Liège, disponible 24h/24 et 7j/7, dans tous les quartiers de Liège. Une panne de chauffage ou une chaudière en défaut n&apos;attend pas : contactez Bob24 et bénéficiez d&apos;une intervention fiable, durable et assurée par des chauffagistes expérimentés et passionnés par leur métier.</p>
+		`}
+	/>
+	<ContactForm />
+	<ServicesGrid
+		title="Nos services Chauffagiste Liège"
+		services={[
+			{
+				title: "Chauffage général",
+				description: "Interventions à Liège pour l'installation, la réparation et l'entretien de vos systèmes de chauffage, réalisées par des chauffagistes qualifiés.",
+				link: null
+			},
+			{
+				title: "Installation de chaudière",
+				description: "Installation de chaudières gaz ou mazout conformes aux normes belges, avec réglages optimisés pour un meilleur rendement énergétique.",
+				link: null
+			},
+			{
+				title: "Dépannage chauffage",
+				description: "Dépannage rapide de votre système de chauffage en cas de panne, manque de chaleur ou dysfonctionnement.",
+				link: null
+			},
+			{
+				title: "Entretien de chaudière",
+				description: "Entretien et contrôle périodique de votre chaudière, obligatoires en Belgique, pour assurer sécurité et performance.",
+				link: null
+			},
+			{
+				title: "Radiateurs & chauffage central",
+				description: "Installation, remplacement et réparation de radiateurs et circuits de chauffage central pour un confort optimal.",
+				link: null
+			},
+			{
+				title: "Solutions chauffage économique",
+				description: "Conseils et installation de solutions de chauffage performantes et économiques, adaptées à votre logement et à la réglementation belge.",
+				link: null
+			}
+		]}
+	/>
+	<AboutCompany
+		title="Sociétés de Chauffage à Liège"
+		paragraphs={[
+			"BOB24 intervient partout à Liège grâce à une mobilité totale et à des équipes prêtes à se déplacer rapidement dans tous les quartiers de la ville.",
+			"Nous disposons d'une flotte de véhicules modernes entièrement équipés avec du matériel de dernière génération. Analyseurs de combustion, outils de diagnostic électronique, systèmes d'entretien haute performance, équipements de purge et de désembouage : chaque intervention est menée avec précision pour garantir une réparation ou une installation de chauffage rapide, durable et sans risque pour vos équipements.",
+			"Nos chauffagistes sont disponibles immédiatement pour gérer toutes vos urgences : panne de chaudière, absence de chauffage, radiateurs froids, chauffe-eau en défaut, fuite sur le circuit thermique… Nous rétablissons votre confort en un temps record."
+		]}
+ 	/>
+	<Testimonials />
+	<PricingSection title="Meilleur prix Chauffagiste Liège — Devis clair avant déplacement, zéro surprise" />
+	<CTAStrip />
+</Layout>
