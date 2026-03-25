@@ -1,0 +1,327 @@
+---
+// Header Component
+---
+
+<style>
+  /* ============================================================
+     HEADER — extracted from post-16788.css + site design tokens
+     ============================================================ */
+
+  /* Google Fonts: DM Sans */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+  /* Design tokens */
+  :root {
+    --header-bg:            #ffffff;
+    --header-sticky-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.1);
+    --header-text:          #222626;
+    --header-link:          #222626;
+    --header-accent:        #13727B;       /* CTA button colour           */
+    --header-accent-hover:  #0f5b62;
+    --header-logo-h:        55px;          /* logo max-height on desktop  */
+    --header-logo-h-tablet: 45px;
+    --header-logo-h-mobile: 40px;
+    --header-pad-x:         55px;          /* horizontal padding per CSS  */
+    --header-pad-y-top:     20px;          /* top-bar vertical padding    */
+  }
+
+  /* ── Base ─────────────────────────────────────────────── */
+  .site-header {
+    position: relative;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    z-index: 1000;
+  }
+
+  /* Shared container */
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Shared column base */
+  .header-logo,
+  .header-nav,
+  .header-cta {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo image */
+  .logo-image {
+    display: block;
+    width: auto;
+    max-height: var(--header-logo-h);
+    height: auto;
+  }
+
+  /* ── Navigation ────────────────────────────────────────── */
+  .header-nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-item a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--header-link);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    transition: color 0.25s ease;
+  }
+
+  /* Zoom-line underline hover effect (menu_hover_zoom_line) */
+  .nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background-color: var(--header-link);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-item a:hover::after,
+  .nav-item.current a::after {
+    transform: scaleX(1);
+  }
+
+  /* ── CTA Button (sc_button_curtain / sc_button_size_large) ── */
+  .header-cta {
+    justify-content: flex-end;
+  }
+
+  .cta-button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 14px 28px;
+    background-color: var(--header-accent);
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Curtain sweep effect */
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--header-accent-hover);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.35s ease;
+    z-index: 0;
+  }
+
+  .cta-button:hover::before {
+    transform: scaleX(1);
+  }
+
+  .cta-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============================================================
+     DESKTOP HEADER  (hidden on mobile / tablet)
+     ============================================================ */
+  .header-top-bar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--header-bg);
+    padding: 12px var(--header-pad-x);
+    box-shadow: var(--header-sticky-shadow);
+    box-sizing: border-box;
+  }
+
+  .header-top-bar .header-container {
+    gap: 0;
+    min-height: 64px;
+    justify-content: space-between;
+  }
+ 
+  /* Column widths */
+  .header-top-bar .header-logo { flex: 1 1 25%; }
+  .header-top-bar .header-nav  { flex: 1 1 50%; justify-content: center; }
+  .header-top-bar .header-cta  { flex: 1 1 25%; justify-content: flex-end; }
+
+  /* ============================================================
+     MOBILE / TABLET BAR  (hidden on desktop)
+     ============================================================ */
+  .header-mobile-bar {
+    display: none;
+    background-color: var(--header-bg);
+    padding: 12px 20px;
+    box-sizing: border-box;
+  }
+
+  .header-mobile-bar .header-container {
+    justify-content: space-between;
+  }
+
+  /* Mobile hamburger */
+  .menu-toggle-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--header-link);
+    text-decoration: none;
+    font-size: 26px;
+    line-height: 1;
+    padding: 6px;
+    transition: color 0.25s;
+  }
+
+  .menu-toggle-link:hover {
+    color: var(--header-accent);
+  }
+
+  /* ============================================================
+     RESPONSIVE BREAKPOINTS
+     ============================================================ */
+
+  /* Tablet (768px – 1024px): adjust top bar */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .header-mobile-bar { display: none; }
+
+    .header-top-bar .header-logo { flex: 0 0 42%; max-width: 42%; }
+    .header-top-bar .header-nav  { flex: 0 0 29%; max-width: 29%; }
+    .header-top-bar .header-cta  { flex: 0 0 29%; max-width: 29%; }
+
+    .logo-image { max-height: var(--header-logo-h-tablet); }
+  }
+
+  /* Mobile (max 767px): hide desktop bar, show mobile bar */
+  @media (max-width: 767px) {
+    .header-top-bar    { display: none; }
+    .header-mobile-bar { display: flex; }
+
+    /* Mobile column widths from post-16788.css */
+    .header-mobile-bar .header-logo { flex: 0 0 50%; max-width: 50%; }
+    .header-mobile-bar .header-mobile-toggle { flex: 0 0 50%; max-width: 50%; justify-content: flex-end; }
+
+    .logo-image { max-height: var(--header-logo-h-mobile); }
+  }
+
+  /* Wide desktop (1025px+): show top bar */
+  @media (min-width: 1025px) {
+    .header-top-bar    { display: flex; }
+    .header-mobile-bar { display: none; }
+  }
+</style>
+
+<!-- ============================================================
+     HEADER MARKUP
+     1. Desktop Header (wide/desktop only, sticky on scroll)
+     2. Mobile bar (tablet/mobile only, with hamburger)
+     ============================================================ -->
+<header class="site-header">
+
+  <!-- 1. Desktop Top Bar -->
+  <div class="header-top-bar">
+    <div class="header-container">
+
+      <div class="header-logo">
+        <a href="/">
+          <img
+            loading="lazy"
+            class="logo-image"
+            src="//www.bob24.be/wp-content/uploads/2025/11/cropped-logo-wh.png"
+            srcset="//www.bob24.be/wp-content/uploads/2025/11/cropped-logo-wh.png 2x"
+            alt="Débouchage Liège"
+            width="288"
+            height="116"
+          />
+        </a>
+      </div>
+
+      <nav class="header-nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li class="nav-item current">
+            <a href="https://www.bob24.be" aria-current="page"><span>Débouchage</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.bob24.be/plombier-liege/"><span>Plomberie</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.bob24.be/chauffagiste-liege/"><span>Chauffage</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.bob24.be/jobs"><span>Jobs</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.bob24.be/contact/"><span>Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+32497546868" class="cta-button">
+          <span class="cta-text">Appeler : 0497 54 68 68</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- 3. Mobile / Tablet Bar -->
+  <div class="header-mobile-bar">
+    <div class="header-container">
+
+      <div class="header-logo">
+        <a href="/">
+          <img
+            loading="lazy"
+            class="logo-image"
+            src="//www.bob24.be/wp-content/uploads/2025/11/cropped-logo-wh.png"
+            srcset="//www.bob24.be/wp-content/uploads/2025/11/cropped-logo-wh.png 2x"
+            alt="Débouchage Liège"
+            width="288"
+            height="116"
+          />
+        </a>
+      </div>
+
+      <div class="header-mobile-toggle">
+        <a href="#" class="menu-toggle-link" role="button" aria-label="Ouvrir le menu">
+          <span class="menu-icon">&#9776;</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</header>
