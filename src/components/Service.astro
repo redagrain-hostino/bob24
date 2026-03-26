@@ -4,6 +4,7 @@ export interface Props {
 	title?: string;
 	paragraphs?: string[];
 	imageSrc?: string;
+	imageAlt?: string;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
 		`Nos équipes sont actives quotidiennement à travers toute l’agglomération liégeoise, que vous soyez aux Guillemins, à Rocourt, Grivegnée, Angleur, Outremeuse ou Sclessin. Chaque intervention est réalisée avec une qualité irréprochable.`,
 		`Pour un plombier sérieux et engagé à Liège, appelez le 0470 062 110 et laissez-nous nous occuper du reste.`
 	],
-	imageSrc = "/images/service-plombier-liege-1024x961.jpg"
+	imageSrc = "/images/service-plombier-liege-1024x961.jpg",
+	imageAlt = "Service Débouchage Liège"
 } = Astro.props;
 ---
 
@@ -49,7 +51,7 @@ const {
 				width="1024"
 				height="961"
 				src={imageSrc}
-				alt="Service"
+				alt={imageAlt}
 			/>
 		</div>
 	</div>

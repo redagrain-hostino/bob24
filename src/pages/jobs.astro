@@ -1,0 +1,303 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Testimonials from "../components/Testimonials.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+---
+
+<Layout title="Jobs — Rejoignez l'équipe Bob24® | Liège">
+	<!-- Page Hero -->
+	<section class="jobs-hero">
+		<div class="jobs-hero__inner">
+			<h1 class="jobs-hero__title">Rejoignez l'équipe Bob24®</h1>
+			<svg class="jobs-hero__arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="9" viewBox="0 0 14.626 8.639">
+				<path d="M14.392,1.42l-.479-.482a.8.8,0,0,0-1.132,0L7.316,6.4,1.844.928a.8.8,0,0,0-1.132,0L.233,1.407a.8.8,0,0,0,0,1.131L6.748,9.076a.818.818,0,0,0,.567.257h0a.818.818,0,0,0,.566-.257L14.389,2.556a.808.808,0,0,0,.234-.571A.8.8,0,0,0,14.392,1.42Z" fill="#35717A"/>
+			</svg>
+		</div>
+	</section>
+
+	<!-- Main Content -->
+	<section class="jobs-content">
+		<div class="jobs-content__inner">
+			<div class="jobs-content__text-col">
+				<h2 class="jobs-content__title">Travailler chez Bob24, c'est quoi ?</h2>
+
+				<div class="jobs-content__body">
+					<p>Chez Bob24, nous intervenons exclusivement dans la région de Liège : pas de trajets inutiles, pas de longues distances, uniquement des interventions locales et rapides. Nous mettons à votre disposition le matériel nécessaire, des outils professionnels et, si besoin, un véhicule de service pour assurer vos déplacements.<br/>Nous recherchons des plombiers, chauffagistes et techniciens sanitaires sérieux, autonomes, ponctuels et professionnels.</p>
+					<p>Une première expérience est appréciée, mais pas indispensable si vous êtes motivé, rigoureux et prêt à apprendre. Le permis B est obligatoire pour assurer les interventions.</p>
+					<p>Nous valorisons les personnes de confiance, capables de travailler seules ou en binôme, avec le souci du travail bien fait et du service client.</p>
+				</div>
+
+				<div class="jobs-content__actions">
+					<a href="tel:+32497546868" class="jobs-content__btn-primary">Appeler</a>
+					<a href="tel:+32497546868" class="jobs-content__btn-call">
+						<span class="jobs-icon-call-bg">
+							<svg class="jobs-icon-call-svg" aria-hidden="true" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+								<path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+							</svg>
+						</span>
+						<span class="jobs-btn-call-text">0497 54 68 68</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Perks List -->
+			<div class="jobs-content__perks-col">
+				<ul class="jobs-perks">
+					<li class="jobs-perks__item">
+						<span class="jobs-perks__icon">📍</span>
+						<div>
+							<strong>Zone locale uniquement</strong>
+							<p>Interventions exclusivement dans la région de Liège — pas de longs trajets.</p>
+						</div>
+					</li>
+					<li class="jobs-perks__item">
+						<span class="jobs-perks__icon">🔧</span>
+						<div>
+							<strong>Matériel fourni</strong>
+							<p>Outils professionnels, équipements modernes et véhicule de service disponibles.</p>
+						</div>
+					</li>
+					<li class="jobs-perks__item">
+						<span class="jobs-perks__icon">📋</span>
+						<div>
+							<strong>Permis B requis</strong>
+							<p>Indispensable pour assurer vos déplacements sur les interventions.</p>
+						</div>
+					</li>
+					<li class="jobs-perks__item">
+						<span class="jobs-perks__icon">🤝</span>
+						<div>
+							<strong>Équipe bienveillante</strong>
+							<p>Travail seul ou en binôme, dans une ambiance professionnelle et humaine.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<ContactForm />
+	<Testimonials />
+	<CTAStrip />
+</Layout>
+
+<style>
+	/* ─── Hero ─── */
+	.jobs-hero {
+		background-color: #F2F5F5;
+		padding: 120px 0 60px;
+		text-align: center;
+		font-family: "DM Sans", sans-serif;
+	}
+
+	.jobs-hero__inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+
+	.jobs-hero__title {
+		font-size: 52px;
+		font-weight: 700;
+		color: #222626;
+		margin: 0 0 30px;
+		line-height: 1.1;
+	}
+
+	.jobs-hero__arrow {
+		display: block;
+		margin: 0 auto;
+		opacity: 0.7;
+	}
+
+	/* ─── Main Content ─── */
+	.jobs-content {
+		margin-top: 80px;
+		margin-bottom: 100px;
+		font-family: "DM Sans", sans-serif;
+	}
+
+	.jobs-content__inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 0 15px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: start;
+	}
+
+	.jobs-content__title {
+		font-size: 38px;
+		font-weight: 700;
+		color: #222626;
+		margin: 0 0 30px;
+		line-height: 1.2;
+	}
+
+	.jobs-content__body {
+		color: #7A7A7A;
+		font-size: 17px;
+		line-height: 1.8;
+		margin-bottom: 40px;
+	}
+
+	.jobs-content__body p {
+		margin-bottom: 18px;
+	}
+
+	/* Actions */
+	.jobs-content__actions {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+		flex-wrap: wrap;
+		padding-top: 20px;
+		border-top: 2px solid #F2F5F5;
+	}
+
+	.jobs-content__btn-primary {
+		background-color: #35717A;
+		color: #FFFFFF;
+		padding: 16px 36px;
+		font-family: "DM Sans", sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		text-decoration: none;
+		display: inline-block;
+		transition: all 0.3s;
+		border: 1px solid #35717A;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+	}
+
+	.jobs-content__btn-primary:hover {
+		background-color: transparent;
+		color: #35717A;
+	}
+
+	.jobs-content__btn-call {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		color: #222626;
+		transition: color 0.3s;
+	}
+
+	.jobs-content__btn-call:hover { color: #D33071; }
+
+	.jobs-icon-call-bg {
+		width: 50px;
+		height: 50px;
+		background-color: #F2F5F5;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 15px;
+		transition: background-color 0.3s;
+	}
+
+	.jobs-content__btn-call:hover .jobs-icon-call-bg {
+		background-color: #D33071;
+	}
+
+	.jobs-content__btn-call:hover .jobs-icon-call-svg {
+		fill: #FFFFFF;
+	}
+
+	.jobs-icon-call-svg {
+		width: 20px;
+		height: 20px;
+		fill: #35717A;
+		transition: fill 0.3s;
+	}
+
+	.jobs-btn-call-text {
+		font-family: "DM Sans", sans-serif;
+		font-weight: 700;
+		font-size: 18px;
+	}
+
+	/* ─── Perks ─── */
+	.jobs-perks {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	.jobs-perks__item {
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+		background: #F2F5F5;
+		padding: 24px;
+		border-radius: 8px;
+		transition: box-shadow 0.3s;
+	}
+
+	.jobs-perks__item:hover {
+		box-shadow: 0 6px 24px rgba(53, 113, 122, 0.12);
+	}
+
+	.jobs-perks__icon {
+		font-size: 28px;
+		flex-shrink: 0;
+		line-height: 1;
+	}
+
+	.jobs-perks__item strong {
+		display: block;
+		font-size: 17px;
+		font-weight: 700;
+		color: #222626;
+		margin-bottom: 6px;
+	}
+
+	.jobs-perks__item p {
+		color: #7A7A7A;
+		font-size: 15px;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* ─── Responsive ─── */
+	@media (max-width: 1024px) {
+		.jobs-hero__title {
+			font-size: 40px;
+		}
+
+		.jobs-content__inner {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.jobs-hero {
+			padding: 80px 0 40px;
+		}
+
+		.jobs-hero__title {
+			font-size: 30px;
+		}
+
+		.jobs-content {
+			margin-top: 50px;
+			margin-bottom: 60px;
+		}
+
+		.jobs-content__title {
+			font-size: 28px;
+		}
+
+		.jobs-content__actions {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+</style>

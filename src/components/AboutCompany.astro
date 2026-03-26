@@ -3,6 +3,7 @@ export interface Props {
 	title?: string;
 	paragraphs?: string[];
 	imageSrc?: string;
+	imageAlt?: string;
 }
 
 const {
@@ -12,7 +13,8 @@ const {
 		`Nous disposons d’une flotte de véhicules modernes entièrement équipés avec du matériel de dernière génération. Caméras d’inspection haute résolution, <a href="https://www.hydrosphere.be/fr/systemes-de-surpression/" target="_blank" rel="noopener">systèmes hydrodynamiques haute pression</a>, outils électromécaniques puissants : chaque intervention est menée avec précision pour garantir un débouchage rapide, durable et sans dégâts pour vos installations.`,
 		"Nos déboucheurs sont disponibles immédiatement pour gérer toutes vos urgences et rétablir vos canalisations en un temps record."
 	],
-	imageSrc = "/images/societe-debouchage-liege-1024x895.jpg"
+	imageSrc = "/images/societe-debouchage-liege-1024x895.jpg",
+	imageAlt = "Société de débouchage à Liège"
 } = Astro.props;
 ---
 
@@ -40,7 +42,7 @@ const {
 		</div>
 
 		<div class="about-company__image-wrapper">
-			<img src={imageSrc} alt="" class="about-company__image" loading="lazy" decoding="async" />
+			<img src={imageSrc} alt={imageAlt} class="about-company__image" loading="lazy" decoding="async" />
 		</div>
 	</div>
 </section>
